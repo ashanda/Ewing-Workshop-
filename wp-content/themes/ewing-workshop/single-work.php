@@ -43,7 +43,8 @@
                             <?php the_field('description');?>
 							</div>
 						</div>
-						<a href="#" onclick="javascript:history.go(-1)" class="button bottom-link"><img src="<?php echo get_template_directory_uri(); ?>/inc_files/images/back-icon.png" alt="" width="" height=""/>Back</a>
+                        
+						<a href="#" onclick="history.back()" class="button bottom-link"><img src="<?php echo get_template_directory_uri(); ?>/inc_files/images/back-icon.png" alt="" width="" height=""/>Back</a>
 					</div><!--inner content end-->
 				</div><!--content bg image end-->
 			</div><!--content wrapper end-->
