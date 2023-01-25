@@ -10,6 +10,7 @@ Template Name: Contact
 					<img id="bg-left" src="<?php echo get_template_directory_uri(); ?>/inc_files/images/left.png" alt="" width="" height=""/>
 					<div id="inner-content">
 						<h1 class="page-header"><?php the_title();?></h1>
+						<?php the_content();?>
 					</div>
 				</div>
 			</div><!--content wrapper end-->
