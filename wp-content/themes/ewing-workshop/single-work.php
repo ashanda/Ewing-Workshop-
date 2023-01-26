@@ -12,9 +12,12 @@
 							<div class="item-image">
 								<img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID)) ?>" alt="" width="" height=""/>
 							</div>
-							<div id="video-block">
+							<?php if( get_field('video') ): ?>
+                                <div id="video-block">
+                                    <?php the_field('video'); ?>
+    							</div>
+                            <?php endif; ?>
 							
-							</div>
 							<div id="image-gallery">
 								<div class="grid" data-masonry='{ "itemSelector": ".grid-item","columnWidth": 178}'>
                                     <?php 
@@ -22,14 +25,17 @@
                                         $size = 'full'; // (thumbnail, medium, large, full or custom size)
                                         if( $images ): ?>
                                             
-                                                <?php foreach( $images as $image_id ): ?>
-                                                        <div class="grid-item"><?php echo wp_get_attachment_image( $image_id, $size ); ?></div>
+                                                <?php foreach( $images as $image ): ?>
+                                                <a href="<?php echo esc_url($image['url']); ?>" data-fancybox="group" data-caption="This image has a caption 2">
+                                                      <div class="grid-item"><img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /></div>
+                                                 </a>
+                                                        
                                                 <?php endforeach; ?>
                                             
                                         <?php endif; ?>
 								</div>
 							</div>
-						</div><!--category left content end-->	
+						</div><!--category left content end-->		
 						
 						<div class="item-right-content right-align">						
 							<div class="row">
