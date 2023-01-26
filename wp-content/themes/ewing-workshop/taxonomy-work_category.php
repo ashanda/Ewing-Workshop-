@@ -16,7 +16,9 @@ get_header();  ?>
                             <?php the_post(); ?>
                             <div class="category-row">
 							<div class="category-image">
+							    <a href="<?php echo get_permalink( $post->ID ); ?>">
 								<img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID)) ?>" alt="" width="" height=""/>
+								</a>
 							</div>
 							<div class="category-text">
 								<div class="row">
